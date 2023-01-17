@@ -15,7 +15,7 @@ function encriptar(text) {
                 } else if(arr[i] === 'i') {
                     arr[i] = 'imes';
                 } else if(arr[i] === 'a') {
-                    arr[i] = 'ia';
+                    arr[i] = 'ai';
                 } else if(arr[i] === 'o') {
                     arr[i] = 'ober';
                 } else if(arr[i] === 'u') {
@@ -27,7 +27,7 @@ function encriptar(text) {
     } else {
         throw Error("Se debe introducir al menos un caracter.");
     }
-    console.log(mensajeEncriptado);
+    
     return mensajeEncriptado;
 }
 
