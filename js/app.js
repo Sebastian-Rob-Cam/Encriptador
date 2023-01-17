@@ -1,16 +1,7 @@
-// import getValueTextArea from "./functions/textArea.js";
-// import encriptar from "./functions/encriptar.js";
-// import desencriptar from "./functions/desencriptar.js";
-// import showMessage from "./functions/showMenssage.js";
-
-let buttonEncriptar = document.getElementById('encriptar');
-let buttonDesencriptar = document.getElementById("desencriptar");
-
-// Funcion para obtener el texto ingresado para el usuario
+// Funcion para obtener el texto ingresado por el usuario
 function getValueTextArea() {
-    let value = document.getElementById("floatingTextarea2").value;
-    
-    return value;
+    let text = document.getElementById("floatingTextarea2").value;
+    return text;
 };
 
 // Funcion para encriptar el texto, se le debe dar el texto a esta funcion
@@ -98,7 +89,8 @@ function showMessage(message) {
     }
 }
 
-
+let buttonEncriptar = document.getElementById('encriptar');
+let buttonDesencriptar = document.getElementById("desencriptar");
 
 buttonEncriptar.addEventListener('click', () => {
     let value = getValueTextArea();
