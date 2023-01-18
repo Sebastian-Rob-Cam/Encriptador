@@ -81,16 +81,31 @@ function showMessage(message) {
         let image = document.getElementById("protectImage");
         image.style.display = 'none';
 
+        let displayContainer = document.getElementById('displayContainer');
         let display = document.getElementById('display');
         display.textContent = message;
-        display.style.visibility = 'visible';
+        displayContainer.style.visibility = 'visible';
     } else {
         throw Error('No se encontro ningun mensaje.');
     }
 }
 
+// Funcion para copiar el texto
+function copy() {
+    let display = document.getElementById('display').innerText;
+    const textArea = document.createElement('textarea');
+    textArea.textContent = display;
+    document.body.append(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    textArea.remove();
+
+    alert(`Se ha pegado '${textArea.value}' a tu portapapeles.`)
+}
+
 let buttonEncriptar = document.getElementById('encriptar');
 let buttonDesencriptar = document.getElementById("desencriptar");
+let copyButton = document.getElementById('copyButton');
 
 buttonEncriptar.addEventListener('click', () => {
     let value = getValueTextArea();
@@ -105,3 +120,5 @@ buttonDesencriptar.addEventListener('click', () => {
 
     showMessage(mensajeDesencriptado);
 })
+
+copyButton.addEventListener('click', copy);
